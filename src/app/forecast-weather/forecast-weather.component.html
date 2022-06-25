@@ -1,0 +1,33 @@
+<div class="card">
+    <div class="card-header">
+        <h2><strong>Forecast Weather</strong></h2>
+    </div>
+    <div class="card-body">
+        <div class="row ">
+            <div class="col-4" *ngFor="let item of forecastW.forecastday">    
+                <div class="text-center">
+                    <h4>{{ item.date | date: 'EEEE, MMM d' }}</h4>
+                    <img src="{{ item.day.condition.icon }}" width="80" height="80" alt="">
+                    <p><em>{{ item.day.condition.text }}</em></p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <strong style="color: #088d65;">Min:</strong> {{ item.day.mintemp_c }}°C <strong style="color: #b4150a;">Max:</strong> {{ item.day.maxtemp_c }}°C
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Prom. Temperatura:</strong> {{ item.day.avgtemp_c }}°C
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Prom. Humedad:</strong> {{ item.day.avghumidity }}%
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Total Precipitación:</strong> {{ item.day.totalprecip_mm }} mm
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Índice de radiación UV:</strong> {{ item.day.uv }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
