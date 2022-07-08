@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class CurrentWeatherApiService {
 
   url: string = 'http://api.weatherapi.com/v1/current.json';
-  apiKey: string = process.env.API_URL;
+  apiKey: string = 'baf7fd7b47fe455a8f623947220807';
   q: string = 'Sincelejo';
 
   path: string = `${this.url}?key=${this.apiKey}&lang=es&q=`;
